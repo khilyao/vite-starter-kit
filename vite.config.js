@@ -1,6 +1,8 @@
 import legacy from "@vitejs/plugin-legacy";
 import imagemin from "unplugin-imagemin/vite";
 import commonjs from "@rollup/plugin-commonjs";
+import compression from "vite-plugin-compression";
+import purgecss from "vite-plugin-purgecss";
 import image from "@rollup/plugin-image";
 import { babel } from "@rollup/plugin-babel";
 import { defineConfig } from "vite";
@@ -9,6 +11,10 @@ import { resolve } from "path";
 export default defineConfig({
   root: "src",
   envDir: "../",
+  build: {
+    outDir: resolve(__dirname, "dist"),
+    emptyOutDir: true,
+  },
   plugins: [
     legacy({
       targets: [
@@ -32,8 +38,10 @@ export default defineConfig({
       renderLegacyChunks: true,
       additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
     }),
+    compression(),
     imagemin(),
     commonjs(),
+    purgecss(),
     image(),
     babel({
       babelHelpers: "bundled",
@@ -44,8 +52,5 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "src"),
     },
-  },
-  build: {
-    outDir: resolve(__dirname, "dist"),
   },
 });

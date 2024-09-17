@@ -2,6 +2,8 @@
   "name": "vite-starter-kit",
   "private": true,
   "version": "0.0.0",
+  "author": "Khilya Oleksandr <sfwew19@gmail.com>",
+  "keywords": [],
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,8 +15,14 @@
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-image": "^3.0.3",
     "@vitejs/plugin-legacy": "^5.4.2",
+    "eslint": "^9.10.0",
     "path": "^0.12.7",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "stylelint": "^16.9.0",
+    "stylelint-config-standard": "^36.0.1",
     "unplugin-imagemin": "^0.5.20",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-purgecss": "^0.2.12"
   }
 }

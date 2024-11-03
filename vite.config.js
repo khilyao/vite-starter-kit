@@ -1,7 +1,6 @@
 import legacy from "@vitejs/plugin-legacy";
 import commonjs from "@rollup/plugin-commonjs";
 import compression from "vite-plugin-compression";
-import purgecss from "vite-plugin-purgecss";
 import image from "@rollup/plugin-image";
 import autoprefixer from "autoprefixer";
 import postcssPresetEnv from "postcss-preset-env";
@@ -41,7 +40,6 @@ export default defineConfig({
     }),
     compression(),
     commonjs(),
-    purgecss(),
     image(),
     babel({
       babelHelpers: "bundled",
